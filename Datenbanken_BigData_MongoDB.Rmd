@@ -41,7 +41,7 @@ author:
 
 - familyname: Alhelal
   othernames: Omar
-  address: "MatNr: 12345679"
+  address: "MatNr: 30355303"
   qualifications: "Data Science (MA, 2. Semester)"
   email: alhelal.omar@fh-swf.de
 
@@ -131,7 +131,7 @@ Die obere Architektur ermöglicht einfache Top Down Abfragen. Die Gateways sind 
 
 # Datenabfrage
 
-## Wie Kommen eigentlich die Daten aus der Datenbank?
+Wie Kommen eigentlich die Daten aus der Datenbank?
 
 Um mit MongoDB zu interagieren, haben wir uns sichergestellt, dass die erforderlichen Bibliotheken Pymongo installiert ist. **PyMongo** ist das offizielle Treiber-Paket, um MongoDB mit Python anzusteuern.
 
@@ -162,7 +162,7 @@ one_document = gateways_collection.find_one(documents_to_find)
 print(one_document)
 ```
 
-Nachdem wir gesehen haben wie die Verbindung und Integration zwischen MongoDB und Python funktioniert, stellen wir vier verschiedene Abfragebeispiele zum Verständnis der Anwendung der Datenbank und ihrer Funktionsweise. Sie dienen als klare Referenz für die Verwendung von Abfragen und können dazu beitragen, Missverständnisse oder potenzielle Fehler in der Anwendung zu vermeiden. Dabei werden nicht nur Abfragebeispiele dargestellt sondern auch visualisiert
+Nachdem wir gesehen haben wie die Verbindung und Integration zwischen MongoDB und Python funktioniert, stellen wir vier verschiedene Abfragebeispiele in Bezug auf Use Case zum Verständnis dieser Anwendung und ihrer Funktionsweise. Sie dienen als klare Referenz für die Verwendung von Abfragen und können dazu beitragen, Missverständnisse oder potenzielle Fehler in der Anwendung zu vermeiden. Dabei werden nicht nur Abfragebeispiele dargestellt sondern auch visualisiert
 
 Am Anfang defenieren wir die Aggregation-Stages als Zeichenkette(Strings), da die Daten in MongoDB in BSON-Format gespeichert sind.
 
@@ -170,7 +170,7 @@ Am Anfang defenieren wir die Aggregation-Stages als Zeichenkette(Strings), da di
 <b>Zur Info:</b> BSON ist ein binäres, JSON-ähnliches Format, das zur Speicherung strukturierter Daten verwendet wird. Im Gegensatz zu JSON unterstützt BSON jedoch einige zusätzliche Datentypen und Features, die für die Speicherung in einer MongoDB nützlich sind.
 :::
 
-Sobald wir alle Stages haben, konstruieren und führen wir die Aggregationsabfrage aus.
+Sobald wir alle Stages haben, konstruieren und führen wir die Aggregationsabfragen aus.
 
 \newpage
 
