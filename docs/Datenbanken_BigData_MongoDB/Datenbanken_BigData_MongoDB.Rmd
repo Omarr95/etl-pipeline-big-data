@@ -1,0 +1,153 @@
+---
+title: "Datenbanken in BigData: Team MongoDB"
+abstract: ""
+keywords: "MongoDB, Python"
+
+course: Datenbanken in Big Data (Prof. Dr. Buchwitz)
+supervisor: Marius ...
+city: Meschede
+
+# List of Authors
+author:
+- familyname: Stasenko
+  othernames: Vladislav
+  address: "MatNr: 30345058"
+  qualifications: "Data Science (MA, 2. Semester)"
+  email: stasenko.vladislav@fh-swf.de
+
+- familyname: Ulbrich
+  othernames: Patrick Adrian
+  address: "MatNr: 12345679"
+  qualifications: "Data Science (MA, 2. Semester)"
+  email: ulbrich.patrick@fh-swf.de
+  
+- familyname: Metzner
+  othernames: Hendrik
+  address: "MatNr: 12345679"
+  qualifications: "Data Science (MA, 2. Semester)"
+  email: metzner.hendrik@fh-swf.de
+
+- familyname: Fenske
+  othernames: Marvin
+  address: "MatNr: 12345679"
+  qualifications: "Data Science (MA, 2. Semester)"
+  email: fenske.marvin@fh-swf.de
+
+- familyname: Eker
+  othernames: Sinan
+  address: "MatNr: 12345679"
+  qualifications: "Data Science (MA, 2. Semester)"
+  email: eker.sinan@fh-swf.de
+
+- familyname: Alhelal
+  othernames: Omar
+  address: "MatNr: 30355303"
+  qualifications: "Data Science (MA, 2. Semester)"
+  email: alhelal.omar@fh-swf.de
+
+# Language Options
+german: true # German Dummy Text
+lang: de-de   # Text Language: en-gb, en-us, de-de
+
+# Indexes
+toc: true     # Table of Contents
+lot: false    # List of Tables
+lof: false    # List of Figures
+
+# Output Options
+bibliography: references.bib
+biblio-style: authoryear-comp
+blind: false
+cover: true
+checklist: false
+output:
+  fhswf::seminarpaper:
+    fig_caption: yes
+    fig_height: 5
+    fig_width: 8
+    keep_tex: no
+    number_sections: yes
+    citation_package: biblatex
+knit: fhswf::render_seminarpaper
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, cache=FALSE, messages=FALSE, warning=FALSE, 
+                      attr.source='.numberLines', singlespacing = TRUE)
+fhswf::fhswf_hooks()
+
+# Load Packages
+library(fhswf)
+library(ggplot2)
+```
+
+
+# Einführung
+
+## Datenbeschreibung
+
+# Anwendungsfall
+
+# Datenbankstuktur
+
+# Python-Applikation
+
+
+# Datenabfrage 
+## Wie Kommen eigentlich die Daten aus der Datenbank?
+Um mit MongoDB zu interagieren, haben wir uns sichergestellt, dass die erforderlichen Bibliotheken Pymongo installiert ist. __PyMongo__ ist das offizielle Treiber-Paket, um MongoDB mit Python anzusteuern.
+
+```python
+import pymongo
+```
+Danach stellten wir eine Verbindung zur MongoDB-Datenbank her.
+
+```python
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+db = client['MongoDB-Database']
+```
+
+In MongoDB werden die Daten in sogenannten "Collections" (Sammlungen) organisiert und gespeichert. Eine Collection ist eine Gruppe von Dokumenten, die ähnliche oder verwandte Daten enthalten. In unserem Fall sind es drei Sammlungen
+```python
+gateways_collection = db["measures"]
+measures_collection = db["gateway"]
+tags_collection = db["tags"]
+```
+
+Um sie abzufragen:
+```python
+documents_to_find = {}
+one_document = gateways_collection.find_one(documents_to_find)
+print(one_document)
+```
+Nachdem wir gesehen haben wie die Verbindung und Integration zwischen MongoDB und Python funktioniert, stellen wir vier verschiedene Abfragebeispiele zum Verständnis der Anwendung der Datenbank und ihrer Funktionsweise. Sie dienen als klare Referenz für die Verwendung von Abfragen und können dazu beitragen, Missverständnisse oder potenzielle Fehler in der Anwendung zu vermeiden. Dabei werden nicht nur Abfragebeispiele dargestellt sondern auch visualisiert
+
+Am Anfang defenieren wir die Aggregation-Stages als Zeichenkette(Strings), da die Daten in MongoDB in BSON-Format gespeichert sind.
+
+
+<div class="alert alert-block alert-success">
+<b>Zur Info:</b> BSON ist ein binäres, JSON-ähnliches Format, das zur Speicherung strukturierter Daten verwendet wird. Im Gegensatz zu JSON unterstützt BSON jedoch einige zusätzliche Datentypen und Features, die für die Speicherung in einer MongoDB nützlich sind.
+</div>
+
+Sobald wir alle Stages haben, konstruieren und führen wir die Aggregationsabfrage aus.
+
+
+# Datenvisualisierung
+
+# Fazit
+
+## Challenges
+
+## Lessons Learned
+
+# Citation
+
+\newpage
+
+# Technical Appendix {-}
+
+```{r, echo = TRUE}
+Sys.time()
+sessionInfo()
+```
+
